@@ -1,4 +1,6 @@
-# CFRNet
+![avatar](Pictures/framework.jpg)
+
+## High-rate monocular depth estimation via cross frame-rate collaboration of frames and events
 A novel frame-event joint learning architecture for high frame rate monocular depth estimation.
 It's coming soon
 ...
