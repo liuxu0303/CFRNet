@@ -48,6 +48,8 @@ For the training of CFRNet, two different frame rates of frames $\boldsymbol{F} 
 
 ### Start training
 
+- Download the ImageNet pretrained [litemono](https://surfdrive.surf.nl/files/index.php/s/InMMGd5ZP2fXuia) as the modal-specific shared encoder.
+
 ```bash
 cd CFRNet-main
 python train.py --config configs/CFRNet_DSEC.json
