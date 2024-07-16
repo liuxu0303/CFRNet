@@ -51,7 +51,7 @@ For the training of CFRNet, two different frame rates of frames $\boldsymbol{F} 
 				<th class="tg-tpii">Outdoors Night3<br></th>
 			</tr>
 			<tr>
-				<td class="tg-qlrr"><a href="[data/E2DEPTH/mvsec/mvsec_outdoor_day1.tar](https://rpg.ifi.uzh.ch/data/E2DEPTH/mvsec/mvsec_outdoor_day1.tar)">outdoor_day1.tar (4.1 GB)</a></td>
+				<td class="tg-qlrr"><a [data/E2DEPTH/mvsec/mvsec_outdoor_day1.tar](https://rpg.ifi.uzh.ch/data/E2DEPTH/mvsec/mvsec_outdoor_day1.tar)>outdoor_day1.tar (4.1 GB)</a></td>
 				<td class="tg-qlrr"><a href="data/E2DEPTH/mvsec/mvsec_outdoor_day2.tar">outdoor_day2.tar (7.9 GB)</a></td>
 				<td class="tg-qlrr"><a href="data/E2DEPTH/mvsec/mvsec_outdoor_night1.tar">outdoor_night1.zip (3.3 GB)</a></td>
 				<td class="tg-qlrr"><a href="data/E2DEPTH/mvsec/mvsec_outdoor_night2.tar">outdoor_night2.zip (3.4 GB)</a></td>
