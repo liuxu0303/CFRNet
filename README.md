@@ -32,12 +32,12 @@ DSEC: A Stereo Event Camera Dataset for Driving Scenarios: https://dsec.ifi.uzh.
 
 - Training Sequences
 ```
-*interlaken_00_c, interlaken_00_d, interlaken_00_e, interlaken_00_f, zurich_city_00_a, zurich_city_00_b, zurich_city_01_a, zurich_city_01_b, zurich_city_01_c, zurich_city_01_d, zurich_city_01_e, zurich_city_01_f, zurich_city_02_a, zurich_city_02_b, zurich_city_02_c, zurich_city_03_a, zurich_city_04_a, zurich_city_04_b, zurich_city_04_c, zurich_city_04_d, zurich_city_04_e, zurich_city_04_f, zurich_city_05_a, zurich_city_05_b, zurich_city_07_a, zurich_city_08_a, zurich_city_09_b, zurich_city_09_c, zurich_city_09_d, zurich_city_09_e, zurich_city_10_a, zurich_city_10_b, zurich_city_11_a, zurich_city_11_b, zurich_city_11_c*
+interlaken_00_c, interlaken_00_d, interlaken_00_e, interlaken_00_f, zurich_city_00_a, zurich_city_00_b, zurich_city_01_a, zurich_city_01_b, zurich_city_01_c, zurich_city_01_d, zurich_city_01_e, zurich_city_01_f, zurich_city_02_a, zurich_city_02_b, zurich_city_02_c, zurich_city_03_a, zurich_city_04_a, zurich_city_04_b, zurich_city_04_c, zurich_city_04_d, zurich_city_04_e, zurich_city_04_f, zurich_city_05_a, zurich_city_05_b, zurich_city_07_a, zurich_city_08_a, zurich_city_09_b, zurich_city_09_c, zurich_city_09_d, zurich_city_09_e, zurich_city_10_a, zurich_city_10_b, zurich_city_11_a, zurich_city_11_b, zurich_city_11_c
 ```
 
 - Testing Sequences
 ```
-*interlaken_00_g, thun_00_a, zurich_city_02_d, zurich_city_02_e, zurich_city_06_a, zurich_city_09_a*
+interlaken_00_g, thun_00_a, zurich_city_02_d, zurich_city_02_e, zurich_city_06_a, zurich_city_09_a
 ```
 
 For the training of CFRNet, two different frame rates of frames $\boldsymbol{F} = \left\lbrace F_{1}, ..., F_{T}\right\rbrace$ and event temporal bins $\boldsymbol{S} = \left\lbrace S_{1}, ..., S_{K}\right\rbrace$ are required. Therefore, we keep the frames rate (*i.e.*, 2.5 Hz) at $1/4$ of the event temporal bins frame rate (*i.e.*, depth ground truth frame rate, 10 Hz). The training set consists of 35 sequences with more than 5.4k frames, and 21.9k depth ground-truth and corresponding recorded events. The testing set consists of 6 sequences with more than 1k frames, 4.2k depth ground-truth and corresponding recorded events. During inference, we achieve high-rate monocular depth estimation by increasing the input rate of frames and event temporal bins, especially by increasing the rate of the latter. In addition, we also discuss the effectiveness of CFRNet in handling two modalities with the same frame rate on the MVSEC dataset. For MVSEC, we follow the experimental settings of previous works, training the monocular depth estimation methods on the outdoor day2 sequence and evaluating them on the outdoor day1 and outdoor night1 sequences.
