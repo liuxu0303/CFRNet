@@ -46,6 +46,14 @@ For the training of CFRNet, two different frame rates of frames $\boldsymbol{F} 
 - [outdoor_day2.tar (7.9 GB)](https://rpg.ifi.uzh.ch/data/E2DEPTH/mvsec/mvsec_outdoor_day2.tar)
 - [outdoor_night1.zip (3.3 GB)](https://rpg.ifi.uzh.ch/data/E2DEPTH/mvsec/mvsec_outdoor_night1.tar)
 
+### Start training
+
+```bash
+cd CFRNet-main
+python train.py --config configs/CFRNet_DSEC.json
+```
+
+
 High-rate monocular depth estimation at 100Hz, where the frame modality frame rate is 2.5Hz and the event modality is 100Hz:
 
 ![High-rate monocular depth estimation at 100Hz](https://github.com/liuxu0303/CFRNet/blob/main/High_rate_depth_100Hz.gif)
