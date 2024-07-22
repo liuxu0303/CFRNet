@@ -141,9 +141,10 @@ if __name__ == '__main__':
                         default="./lite_transformer/lite-mono-pretrain.pth",
                         type=str,
                         help='path to the checkpoint with which to initialize the modality-specific shared encoders.')
-    parser.add_argument('--c', type=str,
-                        help='path to the model weights',
-                        default=None)
+    parser.add_argument('--c', '--path_to_model',
+                        default=None,
+                        type=str,
+                        help='path to the model weights')
     parser.add_argument('-g', '--gpu_id', default=None, type=int,
                         help='path to the checkpoint with which to initialize the model weights (default: None)')
     args = parser.parse_args()
