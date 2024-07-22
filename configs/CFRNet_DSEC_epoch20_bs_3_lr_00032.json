@@ -1,0 +1,74 @@
+{
+    "name": "CFRNet_DSEC_epoch20_bs_3_lr_00032",
+    "cuda": true,
+    "gpu": 0,
+    "data_loader": {
+        "train": {
+            "type": "HDF5DataLoader",
+            "base_folder": "./Dataset/DSEC_depth/split/train_file.csv",
+            "root_folder": "./Dataset/DSEC_depth",
+            "delta_t_ms": 50,
+            "step_size": 8,
+            "clip_distance": 50.0,
+            "num_bins": 3
+        },
+        "validation": {
+            "type": "HDF5DataLoader",
+            "base_folder": "./Dataset/DSEC_depth/split/test_file.csv",
+            "root_folder": "./Dataset/DSEC_depth",
+            "delta_t_ms": 50,
+            "step_size": 8,
+            "clip_distance": 50.0,
+            "num_bins": 3
+        },
+        "batch_size": 3,
+        "num_workers": 6,
+        "pin_memory": false,
+        "normalize": true,
+        "shuffle": true
+    },
+    "lr_scheduler_type": "OneCycleLR",
+    "lr_scheduler_freq": 10,
+    "lr_scheduler": {
+        "max_lr": 0.00032,
+        "epochs": 20,
+        "steps_per_epoch": 914,
+        "cycle_momentum": true,
+        "base_momentum": 0.85,
+        "max_momentum": 0.95,
+        "last_epoch": -1,
+        "div_factor": 25,
+        "final_div_factor": 100
+    },
+    "optimizer_type": "AdamW",
+    "optimizer": {
+        "lr": 0.00032,
+        "weight_decay": 0.1,
+        "amsgrad": true
+    },
+    "loss": {
+        "type": "scale_invariant_log_loss",
+        "config": {
+            "n_lambda": 0.5,
+            "min_depth": 4.59,
+            "max_depth": 50.0
+        }
+    },
+    "trainer": {
+        "epochs": 20,
+        "sequence_length": 8,
+        "save_dir": "./save_checkpoint/",
+        "save_freq": 4,
+        "verbosity": 2,
+        "monitor": "val_L_si",
+        "monitor_mode": "min"
+    },
+    "arch": "CFRNet2Depth",
+    "model": {
+        "num_bins": 3,
+        "base_num_channels": 32,
+        "num_output_channels": 1,
+        "use_upsample_conv": true,
+        "norm": "none"
+    }
+}
