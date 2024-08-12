@@ -12,8 +12,8 @@ class Trainer(BaseTrainer):
     """
 
     def __init__(self, model, loss, loss_params, config,
-                 data_loader, valid_data_loader=None, train_logger=None):
-        super(Trainer, self).__init__(model, loss, loss_params, config, train_logger)
+                 data_loader, valid_data_loader=None, resume=None, train_logger=None):
+        super(Trainer, self).__init__(model, loss, loss_params, config, resume, train_logger)
         self.config = config
         self.batch_size = data_loader.batch_size
         self.data_loader = data_loader
