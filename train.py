@@ -18,7 +18,7 @@ warnings.filterwarnings('ignore')
 logging.basicConfig(level=logging.INFO, format='')
 
 
-def main(config, backbone_pretrain=None, initial_checkpoint=None):
+def main(config, resume, backbone_pretrain=None, initial_checkpoint=None):
     train_logger = None
 
     L = config['trainer']['sequence_length']
@@ -125,6 +125,7 @@ def main(config, backbone_pretrain=None, initial_checkpoint=None):
               config=config,
               data_loader=data_loader,
               valid_data_loader=valid_data_loader,
+              resume=resume,
               train_logger=train_logger)
 
     trainer.train()
@@ -137,6 +138,8 @@ if __name__ == '__main__':
         description='Learning DVS Monocular Depth Prediction')
     parser.add_argument('-c', '--config', default=None, type=str,
                         help='config file path (default: None)')
+    parser.add_argument('-r', '--resume', default=None, type=str,
+                        help='path to latest checkpoint (default: None)')
     parser.add_argument('-b', '--backbone_pretrain',
                         default="./lite_transformer/lite-mono-pretrain.pth",
                         type=str,
@@ -160,4 +163,4 @@ if __name__ == '__main__':
             assert not os.path.exists(path), "Path {} already exists!".format(path)
     assert config is not None
 
-    main(config, args.backbone_pretrain, args.path_to_model)
+    main(config, args.resume, args.backbone_pretrain, args.path_to_model)
