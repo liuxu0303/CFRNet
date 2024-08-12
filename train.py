@@ -113,8 +113,8 @@ def main(config, backbone_pretrain=None, initial_checkpoint=None):
                                (k in event_model_dict and not k.startswith('norm'))}
         rgb_model_dict.update(rgb_pretrained_dict)
         event_model_dict.update(event_pretrained_dict)
-        model.Unet.RGB_encoder.load_state_dict(rgb_model_dict)
-        model.Unet.event_encoder.load_state_dict(event_model_dict)
+        model.net.RGB_encoder.load_state_dict(rgb_model_dict)
+        model.net.event_encoder.load_state_dict(event_model_dict)
         print('my pretrain loaded.')
 
     loss = eval(config['loss']['type'])
