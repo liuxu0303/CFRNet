@@ -25,7 +25,6 @@ class BaseNet(nn.Module):
             self.UpsampleLayer = TransposedConvLayer
         assert(self.num_output_channels > 0)
         print(f'Kernel size {self.kernel_size}')
-        print(f'Skip type {self.skip_type}')
         print(f'norm {self.norm}')
 
     def build_decoders(self):
