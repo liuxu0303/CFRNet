@@ -105,8 +105,8 @@ def main(config, backbone_pretrain=None, initial_checkpoint=None):
     if backbone_pretrain is not None:
         print('Loading pretrained model weights from: {}'.format(backbone_pretrain))
         pretrained_dict = torch.load(backbone_pretrain)['model']
-        rgb_model_dict = model.Unet.RGB_encoder.state_dict()
-        event_model_dict = model.Unet.event_encoder.state_dict()
+        rgb_model_dict = model.net.RGB_encoder.state_dict()
+        event_model_dict = model.net.event_encoder.state_dict()
         rgb_pretrained_dict = {k: v for k, v in pretrained_dict.items() if
                                (k in rgb_model_dict and not k.startswith('norm'))}
         event_pretrained_dict = {k: v for k, v in pretrained_dict.items() if
