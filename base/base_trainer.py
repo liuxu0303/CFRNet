@@ -13,7 +13,7 @@ class BaseTrainer:
     """
     Base class for all trainers
     """
-    def __init__(self, model, loss, loss_params, resume, config, train_logger=None):
+    def __init__(self, model, loss, loss_params, config, resume=None, train_logger=None):
         self.config = config
         self.logger = logging.getLogger(self.__class__.__name__)
         self.model = model
