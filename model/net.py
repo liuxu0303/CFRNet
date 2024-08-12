@@ -33,14 +33,12 @@ class BaseNet(nn.Module):
         decoders = nn.ModuleList()
         for input_size, output_size in zip(decoder_input_sizes, decoder_output_sizes):
             decoders.append(self.UpsampleLayer(
-                input_size if self.skip_type == 'sum' else 2 * input_size,
-                output_size, kernel_size=self.kernel_size,
+                input_size, output_size, kernel_size=self.kernel_size,
                 padding=self.kernel_size // 2, norm=self.norm))
         return decoders
 
     def build_prediction_layer(self, num_output_channels, norm=None):
-        return ConvLayer(self.base_num_channels if self.skip_type == 'sum' else 2 * self.base_num_channels,
-                         num_output_channels, 1, activation=None, norm=norm)
+        return ConvLayer(self.base_num_channels, num_output_channels, 1, activation=None, norm=norm)
 
 
 class EventLiteMono(BaseNet):
